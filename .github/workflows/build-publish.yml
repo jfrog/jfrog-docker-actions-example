@@ -20,7 +20,7 @@ jobs:
 
       - name: Build Tag and push Docker Image
         run: |
-          export IMAGE_NAME=${{ secrets.JF_URL }}/my-docker/jfrog-docker-example-image:$NEXT_VERSION
+          export IMAGE_NAME=${{ secrets.JF_URL }}/my-docker/jfrog-docker-example-image:$JFROG_CLI_BUILD_NUMBER
           jf docker build -t $IMAGE_NAME .
           jf docker push $IMAGE_NAME my-docker
           
